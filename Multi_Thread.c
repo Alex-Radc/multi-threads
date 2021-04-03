@@ -1,10 +1,18 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <pthread.h>
 
-int counter1 = 0;
-int counter2 = 300;
+void* threadFunc(void* thread_data){
+	pthread_exit(0);
+}
 
-int main(void) {
-	printf("!!!Hello World!!!");
-	return EXIT_SUCCESS;
+int main()
+{
+	void* thread_data = NULL;
+	pthread_t thread;
+
+	pthread_create(&thread, NULL, threadFunc, thread_data);
+
+	pthread_join(thread, NULL);
+
+	return 0;
 }
