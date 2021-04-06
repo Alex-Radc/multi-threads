@@ -36,7 +36,6 @@ void* threadFunc2(void *thread_data)
 		}
 	}
 }
-
 int main()
 {
 	void *thread_data1 = NULL;
